@@ -5,7 +5,11 @@ class CodeBlock {
 	
 	SendLines(line_sleep := 0) {
 		for index in this.Lines {
-			SendRaw % this.Lines[index] . this.LineSeparator
+			if (index < this.Lines.Length()) {
+				SendRaw % this.Lines[index] . this.LineSeparator
+			} else {
+				SendRaw % this.Lines[index]
+			}
 			if line_sleep {
 				Sleep % line_sleep
 			}
@@ -36,7 +40,7 @@ class Parser {
 				new_block_name := SubStr(line, StrLen(this.Marker)+1)
 				if StrLen(new_block_name) {
 					block_name := new_block_name
-					if not result.HasKey(block_name){
+					if not result.HasKey(block_name) {
 						result[block_name] := new CodeBlock()
 					}
 				} else {
@@ -53,7 +57,8 @@ class Parser {
 }
 
 StrStartsWith(str, with) {
-	if StrLen(with) > StrLen(str)
+	if StrLen(with) > StrLen(str) {
 		return 0
+	}
 	return SubStr(str, 1, StrLen(with)) = with
 }
