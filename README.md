@@ -4,7 +4,7 @@ GhostWriter is an AutoHotKey script for parsing files and automatically typing o
 ## Intention
 The primary use case of this project is to perfectly type out previously written source code (to be captured for video tutorials). 
 
-## Usage
+## Usage example
 1) Create annotated file (for example `test.txt`): 
 
 ```
@@ -35,3 +35,5 @@ result := pars.Parse("test.txt")
   Send, {Enter}
   result.sec2.SendLines()
 ```
+
+Another, more realistic example can be seen in `test.ahk`.
