@@ -10,8 +10,8 @@ The primary use case of this project is to perfectly type out previously written
 ```
 This is not covered in any section.
 #!sec1
-Define sections using a prefix, later specified whan parsing.
-Also it could contain <b>any special</b> special characters!
+Define sections using a prefix (in this case "#!"), later specified when parsing.
+Also it may contain any <b>special</b> characters!
 #!sec2
 This is another section.
 #!
