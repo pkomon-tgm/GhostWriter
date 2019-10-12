@@ -13,6 +13,7 @@ SetBatchLines -1
 pars := new Parser()
 res := pars.Parse("Test.java")
 
+; type out a-star code section by section
 +F12::
 	res.generic_astar_stub.SendLines()
 	Send, {Enter 2}
